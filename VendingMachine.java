@@ -2,14 +2,14 @@ import java.util.List;
 
 public interface VendingMachine {
 
-    //void selectItemAndGetPrice(Item item);  exceptie: SoldOutException
+    long selectItemAndGetPrice(Item item);
 
-    //void insertCoin (Coin coin);
+    void insertCoin (Coin coin);
 
-    //List<Coin> refund();  exceptie: NotSufficientChangeException si NotFullyPaid
+    List<Coin> refund();
 
-    //PuchaseAndCoins<Item, List<Coin>> collectItemAndChange();
+    PurchaseAndCoins<Item, List<Coin>> colletItemAndGetChange();
 
-    //void reset();
+    void reset();
 
 }

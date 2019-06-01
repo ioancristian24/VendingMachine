@@ -20,17 +20,22 @@ public class Inventory<T> {
     }
 
     public void add(T Item) {
-
+        int count = inventory.get(Item);
+        inventory.put(Item, count + 1);
     }
 
 
     public boolean hasItem(T Item) {
-        if (inventory.containsKey(Item)) return true;
+        if (getQuantity(Item) >0 ) return true;
         else return false;
     }
 
     public void decrease (T Item){
-        this.decrease(Item);
+        if (hasItem(Item)){
+            int count = inventory.get(Item);
+            inventory.put(Item, count - 1);
+        }
+
     }
 
     public void clear () {
@@ -39,6 +44,13 @@ public class Inventory<T> {
     }
 
     public void put(T item, int quantity){
+        inventory.put(item, quantity);
+    }
 
+    @Override
+    public String toString() {
+        return "Inventory{" +
+                "inventory=" + inventory +
+                '}';
     }
 }
