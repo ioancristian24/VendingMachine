@@ -8,7 +8,7 @@ public interface VendingMachine {
 
     List<Coin> refund();
 
-    PurchaseAndCoins<Item, List<Coin>> colletItemAndGetChange();
+    PurchaseAndCoins<Item, List<Coin>> collectItemAndGetChange();
 
     void reset();
 
