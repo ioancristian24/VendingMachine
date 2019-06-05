@@ -6,9 +6,9 @@ public interface VendingMachine {
 
     void insertCoin (Coin coin);
 
-    List<Coin> refund();
+    List<Coin> refund() throws NotSufficientChangeException;
 
-    PurchaseAndCoins<Item, List<Coin>> collectItemAndGetChange();
+    PurchaseAndCoins<Item, List<Coin>> collectItemAndGetChange() throws NotSufficientChangeException, NotFullyPaidException;
 
     void reset();
 

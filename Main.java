@@ -1,14 +1,15 @@
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SoldOutException {
 
         VendingMachineImpl vm = new VendingMachineImpl();
 
-        vm.initialise();
 
         vm.printStats();
 
+        vm.selectItemAndGetPrice(Item.MARS);
 
+        System.out.println(Item.MARS.getPrice());
 
     }
 }
